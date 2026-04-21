@@ -37,6 +37,7 @@ jobs:
         args: >
           -Dsonar.organization=ac-itsolutions2025
           "-Dsonar.projectName=Java Sample Project"
+          -Dsonar.projectKey=java-sample-project
       
 
     - name: Configure AWS Credentials (OIDC)
