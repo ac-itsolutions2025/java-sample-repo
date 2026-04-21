@@ -32,6 +32,11 @@ jobs:
       uses: SonarSource/sonarqube-scan-action@v7.1.0 # Ex: v4.1.0 or sha1, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        projectBaseDir: src
+        args: >
+          -Dsonar.organization=ac-itsolutions2025
+          "-Dsonar.projectName=Java Sample Project"
       
 
     - name: Configure AWS Credentials (OIDC)
