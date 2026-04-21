@@ -38,7 +38,7 @@ jobs:
           -Dsonar.organization=ac-itsolutions2025
           "-Dsonar.projectName=Java Sample Project"
           -Dsonar.projectKey=java-sample-project
-          -Dsonar.java.binaries=target/*/*
+          -Dsonar.java.binaries=target/classes
       
 
     - name: Configure AWS Credentials (OIDC)
