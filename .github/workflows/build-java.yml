@@ -23,7 +23,7 @@ jobs:
         java-version: '17'
 
     - name: Build and Test
-      run: mvn clean test
+      run: mvn clean verify
 
     - name: Package JAR
       run: mvn package
