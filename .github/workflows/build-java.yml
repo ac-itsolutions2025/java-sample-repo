@@ -28,8 +28,10 @@ jobs:
     - name: Package JAR
       run: mvn package
 
-    - name: Build + Sonar
-      run: mvn clean verify sonar:sonar
+    - name: Build + SonarCloud
+      run: mvn clean verify sonar:sonar \
+           -Dsonar.organization=ac-itsolutions2025 \
+           -Dsonar.projectKey=java-sample-project
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: SonarQube Scan
