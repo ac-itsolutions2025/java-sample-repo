@@ -31,7 +31,8 @@ jobs:
     - name: Build + SonarCloud
       run: mvn clean verify sonar:sonar \
            -Dsonar.organization=ac-itsolutions2025 \
-           -Dsonar.projectKey=java-sample-project
+           -Dsonar.projectKey=java-sample-project \
+           -Dsonar.host.url=https://sonarcloud.io
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: SonarQube Scan
