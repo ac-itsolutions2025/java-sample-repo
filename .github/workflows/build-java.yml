@@ -36,17 +36,12 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@v7.1.0 # Ex: v4.1.0 or sha1, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
+
+    - name: SonarCloud Quality Gate
+      uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
+      timeout-minutes: 5
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        projectBaseDir: src
-        args: >
-          -Dsonar.organization=ac-itsolutions2025
-          "-Dsonar.projectName=Java Sample Project"
-          -Dsonar.projectKey=java-sample-project
-          -Dsonar.java.binaries=target/classes
       
 
     - name: Configure AWS Credentials (OIDC)
